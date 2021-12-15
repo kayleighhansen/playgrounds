@@ -16,10 +16,4 @@ using Playgrounds.Models;
         public DbSet<Playgrounds.Models.Note> Note { get; set; }
         public DbSet<Playgrounds.Models.Organization> Organization { get; set; }
 
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-
-        // {
-        //     modelBuilder.Entity<Note>().HasOne(m => m.DateAdded).WithMany(o => o.NoteDateAdded).OnDelete(DeleteBehavior.NoAction);
-
-        // }
     }
