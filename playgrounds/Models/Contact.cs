@@ -6,7 +6,7 @@ namespace Playgrounds.Models
     public class Contact
     {
         public int ContactId { get; set; }
-        public Date DateAdded { get; set; }
+        public int DateAdded { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Job { get; set; }
@@ -18,11 +18,10 @@ namespace Playgrounds.Models
         public int AddressId { get; set;}
 
         // can appear in these lists
-        public virtual ICollection<List> Contacts { get; set; }
-        public virtual ICollection<List> Organizations { get; set; }
-        public virtual ICollection<List> Projects { get; set; }
-        public virtual ICollection<List> Tasks { get; set; }
-        public virtual ICollection<List> Trips { get; set; }
+        // public virtual ICollection<List> Organizations { get; set; }
+        // public virtual ICollection<List> Projects { get; set; }
+        // public virtual ICollection<List> Tasks { get; set; }
+        // public virtual ICollection<List> Trips { get; set; }
 
     }
 }
