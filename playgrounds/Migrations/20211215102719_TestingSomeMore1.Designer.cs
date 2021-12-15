@@ -2,14 +2,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace playgrounds.Migrations
 {
     [DbContext(typeof(ContactContext))]
-    partial class ContactContextModelSnapshot : ModelSnapshot
+    [Migration("20211215102719_TestingSomeMore1")]
+    partial class TestingSomeMore1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,18 +119,12 @@ namespace playgrounds.Migrations
                     b.Property<int>("ContactId")
                         .HasColumnType("int");
 
-                    b.Property<int>("DateAddedId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("NoteId");
 
                     b.HasIndex("ContactId");
-
-                    b.HasIndex("DateAddedId")
-                        .IsUnique();
 
                     b.ToTable("Note");
                 });
@@ -175,15 +171,7 @@ namespace playgrounds.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Playgrounds.Models.Date", "DateAdded")
-                        .WithOne("NoteDateAdded")
-                        .HasForeignKey("Playgrounds.Models.Note", "DateAddedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Contacts");
-
-                    b.Navigation("DateAdded");
                 });
 
             modelBuilder.Entity("Playgrounds.Models.ContactInfo", b =>
@@ -194,8 +182,6 @@ namespace playgrounds.Migrations
             modelBuilder.Entity("Playgrounds.Models.Date", b =>
                 {
                     b.Navigation("ContactDateAdded");
-
-                    b.Navigation("NoteDateAdded");
                 });
 #pragma warning restore 612, 618
         }
