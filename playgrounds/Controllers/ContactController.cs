@@ -24,7 +24,10 @@ namespace playgrounds.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Contact>>> GetContact()
         {
-            return await _context.Contact.ToListAsync();
+            return await _context.Contact
+                .Include(m => m.DateAdded)
+                .Include(m => m.ContactInfomation)
+                .ToListAsync();
         }
 
         // GET: api/Contact/5
