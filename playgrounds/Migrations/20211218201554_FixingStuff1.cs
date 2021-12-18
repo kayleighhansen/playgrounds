@@ -2,7 +2,7 @@
 
 namespace playgrounds.Migrations
 {
-    public partial class TestingSomeMore : Migration
+    public partial class FixingStuff1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

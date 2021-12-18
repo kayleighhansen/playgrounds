@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace playgrounds.Migrations
 {
     [DbContext(typeof(ContactContext))]
-    [Migration("20211215103535_TestingSomeMore")]
-    partial class TestingSomeMore
+    [Migration("20211218201554_FixingStuff1")]
+    partial class FixingStuff1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
