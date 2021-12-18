@@ -2,14 +2,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace playgrounds.Migrations
 {
     [DbContext(typeof(ContactContext))]
-    partial class ContactContextModelSnapshot : ModelSnapshot
+    [Migration("20211218210513_Migration5")]
+    partial class Migration5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,8 @@ namespace playgrounds.Migrations
 
                     b.HasKey("ContactId");
 
-                    b.HasIndex("DateAddedId");
+                    b.HasIndex("DateAddedId")
+                        .IsUnique();
 
                     b.ToTable("Contact");
                 });
@@ -52,9 +55,6 @@ namespace playgrounds.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<int>("ContactDateAddedId")
-                        .HasColumnType("int");
 
                     b.Property<string>("DayMonth")
                         .HasColumnType("nvarchar(max)");
@@ -79,12 +79,17 @@ namespace playgrounds.Migrations
             modelBuilder.Entity("Playgrounds.Models.Contact", b =>
                 {
                     b.HasOne("Playgrounds.Models.Date", "DateAdded")
-                        .WithMany()
-                        .HasForeignKey("DateAddedId")
+                        .WithOne("ContactDateAdded")
+                        .HasForeignKey("Playgrounds.Models.Contact", "DateAddedId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("DateAdded");
+                });
+
+            modelBuilder.Entity("Playgrounds.Models.Date", b =>
+                {
+                    b.Navigation("ContactDateAdded");
                 });
 #pragma warning restore 612, 618
         }

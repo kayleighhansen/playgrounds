@@ -17,9 +17,8 @@ namespace Playgrounds.Models
         // public int ContactInfoId { get; set;}
         // public int AddressId { get; set;}
 
-        //navigation properties
-        // [InverseProperty("ContactDateAdded")]
-        // public Date DateAdded { get; set; }
+        // navigation properties
+        public Date DateAdded { get; set; }
 
         // [InverseProperty("ContactInformation")]
         // public ContactInfo ContactInfomation { get; set; }
