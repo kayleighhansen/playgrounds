@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,15 +14,15 @@ namespace Playgrounds.Models
         public string Details { get; set; }
 
         // reference keys
-        public int ContactInfoId { get; set;}
-        public int AddressId { get; set;}
+        // public int ContactInfoId { get; set;}
+        // public int AddressId { get; set;}
 
         //navigation properties
-        [InverseProperty("ContactDateAdded")]
-        public Date DateAdded { get; set; }
+        // [InverseProperty("ContactDateAdded")]
+        // public Date DateAdded { get; set; }
 
-        [InverseProperty("ContactInformation")]
-        public ContactInfo ContactInfomation { get; set; }
+        // [InverseProperty("ContactInformation")]
+        // public ContactInfo ContactInfomation { get; set; }
 
         // can appear in these lists
         // public virtual ICollection<List> Organizations { get; set; }
