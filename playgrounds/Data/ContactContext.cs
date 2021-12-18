@@ -12,19 +12,5 @@ using Playgrounds.Models;
         {
         }
 
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     base.OnModelCreating(modelBuilder);
-
-        //     modelBuilder.UseOpenIddict<int>();
-
-        // }
-
-        public DbSet<Contact> Contact { get; set; }
-        public DbSet<Note> Note { get; set; }
-        public DbSet<Organization> Organization { get; set; }
-
-        // public DbSet<ContactInfo> ContactInfo { get; set; }
-        // public DbSet<Date> Date { get; set; }
-
+        public DbSet<Playgrounds.Models.Contact> Contact { get; set; }
     }
