@@ -12,11 +12,11 @@ namespace Playgrounds.Models
         public string DayMonth { get; set; }
         public string Month { get; set; }
         public string Year { get; set; }
-        public int ContactDateAddedId { get; set; }
+        public int ContactId { get; set; }
 
 
-        // [InverseProperty("DateAdded")]
-        // public Contact ContactDateAdded { get; set; }
+        // [InverseProperty("DatesAdded")]
+        // public Contact Contact { get; set; }
 
 
         // public Contact ContactDateAdded { get; set; } 

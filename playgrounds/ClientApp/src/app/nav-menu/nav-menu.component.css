@@ -4,6 +4,24 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+nav {
+  background-color: #63845C;
+}
+
+.nav-search {
+  border:none;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.logo-div {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+}
+
 html {
   font-size: 14px;
 }
