@@ -4,9 +4,49 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+nav {
+  background-color: #63845C;
+}
+
+.icon {
+  color:black;
+  font-size: 30px;
+}
+
+.logo {
+  color:white;
+  font-size: 40px;
+}
+
 html {
   font-size: 14px;
 }
+
+.navbar-expand-sm .navbar-nav {
+  align-items: baseline;
+}
+
+.nav-link {
+  background-color: white;
+  margin: 0px 10px;
+  /* width: 45px; */
+  text-align: center;
+  /* padding: 4px 10px; */
+  /* border-radius: 50%; */
+}
+
+.sign-in {
+  color:black;
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.sign-in-div {
+  background-color:white;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
